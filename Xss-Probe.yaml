@@ -1,0 +1,17 @@
+id: XSS-Fuzz
+type: fuzz
+info:
+  Author: Suraj Bhosale
+  name: XSS Prober
+  risk: Low
+
+payloads:
+  - "%61%27%22%3e%3c%69%6e%6a%65%63%74%61%62%6c%65%3e"
+
+requests:
+  - generators:
+      - Query("[[.original]]{{.payload}}")
+
+    detections:
+      - >-
+        StringSearch('response', ''><injectable>') 
