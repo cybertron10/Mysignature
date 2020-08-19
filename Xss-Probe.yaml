@@ -6,7 +6,7 @@ info:
   risk: Low
 
 payloads:
-  - "%61%27%22%3e%3c%69%6e%6a%65%63%74%61%62%6c%65%3e"
+  - "'><injectable>"
 
 requests:
   - generators:
@@ -14,4 +14,4 @@ requests:
 
     detections:
       - >-
-        StringSearch('response', ''><injectable>') 
+        StringSearch('response', "'><injectable>")
