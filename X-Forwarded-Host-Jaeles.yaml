@@ -11,7 +11,9 @@ requests:
      {{.BaseURL}}
     headers:
       - X-Forwarded-Host: whateveruniqqe.com
+      - X-Forwarded-Scheme: nothttps
+      - X-Host: whateveruniqqe.com
       - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     detections:
       - >-
-        StringSearch('response', 'whateveruniqqe.com') && StringSearch('resHeaders', 'cache') && !RegexSearch("resHeaders", "(?i)(no-cache|must-revalidate)") && StatusCode() != 403
+        StringSearch('response', 'whateveruniqqe.com')
