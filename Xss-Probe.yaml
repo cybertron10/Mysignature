@@ -14,4 +14,4 @@ requests:
 
     detections:
       - >-
-        StringSearch('response', "'><injectable>")
+        StatusCode() == 200 && StringSearch('response', "'><injectable>")
