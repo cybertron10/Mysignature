@@ -1,15 +1,34 @@
-# info to search signature
-id: SQLi-Error
+id: sqli-param-fuzz-01
 type: fuzz
 info:
-  name: SQLi Error detection
+  name: SQL Injection Error
   risk: High
 
-# origin: gonna come from Burp
 payloads:
-    - "'"
-    - '"'
-    - "`"	
+  - >-
+    '
+  - >-
+    %
+  - >-
+    \"
+  - >-
+    `
+  - >-
+    %25%27%25%22
+  - >-
+    %u0027%u0022
+  - >-
+    %c0%a7
+  - >-
+    %0aa%0db
+  - >-
+    1e309
+  - >-
+    char(0x27)char(0x27)
+  - >-
+    %u2018
+  - >-
+    /*
       
 requests:
   - generators:
