@@ -4,6 +4,7 @@ type: fuzz
 info:
   name: SQLi Error detection
   risk: High
+  Author: Suraj Bhosale
 
 # origin: gonna come from Burp
 payloads:
