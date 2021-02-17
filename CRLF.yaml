@@ -1,7 +1,7 @@
 id: CRLF-Injection-Fuzz
 type: fuzz
 info:
-  Author: cybertron10
+  Author: Suraj Bhosale
   name: CRLF Injection
   risk: High
 payloads:
