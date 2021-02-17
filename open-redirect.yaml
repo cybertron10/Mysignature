@@ -12,9 +12,13 @@ variables:
   - prefix: |
       http://
       https://
+      https:
+      \/\/
+      /\/
       /
       //
       ///
+      ////
       ///;@
 payloads:
   - "{{.Domain}}.{{.dest}}/{{.URL}}"
