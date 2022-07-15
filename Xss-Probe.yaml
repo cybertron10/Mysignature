@@ -7,11 +7,12 @@ info:
 
 payloads:
   - "'><injectable>"
+  - "%27%2F%22%3E%3Cinjectable%3E"
 
 requests:
   - generators:
-      - Query("[[.original]]{{.payload}}")
-
+      - Query("[[.original]]{{.payload}}", "*")
+      - Path("[[.original]]{{.payload}}", "*")
     detections:
       - >-
         StatusCode() == 200 && StringSearch('response', "'><injectable>")
