@@ -7,12 +7,12 @@ info:
 
 payloads:
   - "'><injectable>"
-  - "%27%2F%22%3E%3Cinjectable%3E"
+  - "%27%3E%3Cinjectable%3E"
 
 requests:
   - generators:
-      - Query("[[.original]]{{.payload}}", "*")
-      - Path("[[.original]]{{.payload}}", "*")
+      - Query("[[.original]]{{.payload}}")
+      - Path("[[.original]]/{{.payload}}","*")
     detections:
       - >-
-        StatusCode() == 200 && StringSearch('response', "'><injectable>")
+        StatusCode() != 301 && StatusCode() != 302 && StringSearch('response', "'><injectable>") && !StringSearch('resHeaders', 'application/json')
